@@ -2,7 +2,6 @@
 CREATE DATABASE `QUAN_LY_DE_AN`;
 USE `QUAN_LY_DE_AN`;
 
----------------------------------------------------------------------------------------------------
 -- Tạo các bảng
 
 CREATE TABLE `NHANVIEN` 
@@ -46,7 +45,7 @@ CREATE TABLE `CONGVIEC`
     `MADA` INT(11) NOT NULL COMMENT 'Mã số đề án',
     `STT` INT(11) NOT NULL COMMENT 'Số thứ tự công việc trong một đề án',
     `TEN_CONG_VIEC` VARCHAR(50) NOT NULL COMMENT 'Tên công việc'
-)
+);
 
 CREATE TABLE `PHANCONG`
 (
@@ -54,7 +53,7 @@ CREATE TABLE `PHANCONG`
     `MADA` INT(11) NOT NULL COMMENT 'Mã số đề án',
     `STT` INT(11) NOT NULL COMMENT 'Số thứ tự công việc trong môỵ đề án',
     `THOIGIAN` DECIMAL(5,1) NOT NULL COMMENT 'Thời gian làm việc 1 đề án của 1 nhân viên trong 1 tuần'
-)
+);
 
 CREATE TABLE `THANNHAN`
 (
@@ -63,9 +62,9 @@ CREATE TABLE `THANNHAN`
     `PHAI` VARCHAR(3) NOT NULL COMMENT 'Giới tính',
     `NGSINH` DATE NOT NULL COMMENT 'Ngày sinh',
     `QUANHE` VARCHAR(15) NOT NULL COMMENT 'Mối quan hệ với nhân viên'
-)
+);
 
----------------------------------------------------------------------------------------------------
+
 -- Thêm dữ liệu vào các bảng
 INSERT INTO `NHANVIEN` (`HONV`, `TENLOT`, `TENNV`, `MANV`, `NGSINH`, `DCHI`, `PHAI`, `LUONG`, `MA_NQL`, `PHG`) VALUES
 ('Đinh', 'Bá', 'Tiên', '009', '1960-02-11', '119 Cống Quỳnh, Tp HCM', 'Nam', '30000', '005', 5),
