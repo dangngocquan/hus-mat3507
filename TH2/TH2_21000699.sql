@@ -76,7 +76,7 @@ INSERT INTO `NHANVIEN` (`HONV`, `TENLOT`, `TENNV`, `MANV`, `NGSINH`, `DCHI`, `PH
 ('Phạm', 'Văn', 'Vinh', '006', '1965-01-01', '45 Trưng Vương, Hà Nội', 'Nữ', '55000', '', 1),
 ('Trần', 'Hồng', 'Quang', '008', '1967-09-01', '80 Lê Hồng Phong, Tp HCM', 'Nam', '25000', '001', 4);
 
-INSERT INTO `phongban` (`TENPHG`, `MAPHG`, `TRPHG`, `NG_NHANCHUC`) VALUES
+INSERT INTO `PHONGBAN` (`TENPHG`, `MAPHG`, `TRPHG`, `NG_NHANCHUC`) VALUES
 ('Quản lý', 1, '006', '1971-06-19'),
 ('Điều hành', 4, '008', '1985-01-01'),
 ('Nghiên cứu', 5, '005', '1978-05-22');
@@ -133,6 +133,15 @@ INSERT INTO `THANNHAN` (`MA_NVIEN`, `TENTN`, `PHAI`, `NGSINH`, `QUANHE`) VALUES
 ('009', 'Châu', 'Nữ', '1978-12-30', 'Con gái'),
 ('009', 'Phương', 'Nữ', '1957-05-05', 'Vợ chồng'),
 ('009', 'Tiến', 'Nam', '1978-01-01', 'Con trai');
+
+-- Tạo khóa chính
+ALTER TABLE `NHANVIEN` ADD PRIMARY KEY (`MANV`);
+ALTER TABLE `PHONGBAN` ADD PRIMARY KEY (`MAPHG`);
+ALTER TABLE `DEAN` ADD PRIMARY KEY (`MADA`);
+ALTER TABLE `DIADIEM_PHG` ADD PRIMARY KEY (`MAPHG`, `DIADIEM`);
+ALTER TABLE `PHANCONG` ADD PRIMARY KEY (`MA_NVIEN`, `MADA`, `STT`);
+ALTER TABLE `CONGVIEC` ADD PRIMARY KEY (`MADA`, `STT`);
+ALTER TABLE `THANNHAN` ADD PRIMARY KEY (`MA_NVIEN`, `TENTN`);
 
 
 
