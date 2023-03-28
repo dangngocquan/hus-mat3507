@@ -74,8 +74,8 @@ FROM
     ON phongban.TRPHG = nv.MANV
 WHERE phongban.MAPHG =  (
     SELECT PHG
-    FROM nhanvien AS nv2
-    GROUP BY nv2.PHG
+    FROM nhanvien
+    GROUP BY PHG
     ORDER BY COUNT(*) DESC
     LIMIT 1
 );
