@@ -36,7 +36,7 @@ WHERE MANV NOT IN (
 -- (04) 40. Danh sách những trưởng phòng (HONV, TENLOT, TENNV) có tối thiểu một thân nhân.
 SELECT HONV, TENLOT, TENNV
 FROM 
-    phongban LEFT JOIN nhanvien
+    phongban JOIN nhanvien
     ON phongban.TRPHG = nhanvien.MANV
 WHERE TRPHG IN (
     SELECT MA_NVIEN
@@ -46,7 +46,7 @@ WHERE TRPHG IN (
 -- (05) 41. Tìm họ (HONV) của những trưởng phòng chưa có gia đình.
 SELECT HONV
 FROM 
-    phongban LEFT JOIN nhanvien
+    phongban JOIN nhanvien
     ON phongban.TRPHG = nhanvien.MANV
 WHERE TRPHG IN (
     SELECT MA_NVIEN
@@ -60,7 +60,7 @@ FROM nhanvien
 WHERE LUONG > (
     SELECT AVG(LUONG)
     FROM 
-        nhanvien LEFT JOIN phongban
+        nhanvien JOIN phongban
         ON nhanvien.PHG = phongban.MAPHG
     WHERE phongban.TENPHG = "Nghiên cứu"
 );
