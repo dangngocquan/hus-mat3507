@@ -8,10 +8,10 @@
       "server": "localhost",
       "port": 3306,
       "driver": "MariaDB",
-      "name": "Demo",
+      "name": "quan_ly_de_an_4",
       "database": "quan_ly_de_an_4",
       "username": "root",
-      "askForPassword": true
+      "password": "1234"
     }
   ]
 }
