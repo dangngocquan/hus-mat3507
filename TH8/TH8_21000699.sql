@@ -39,9 +39,9 @@ WHERE NOT EXISTS (
             WHERE CONCAT(HONV, ' ', TENLOT, ' ', TENNV) = "Đinh Bá Tiến"
         )
         AND MADA NOT IN (
-                SELECT MADA
-                FROM phancong
-                WHERE nhanvien.MANV = phancong.MA_NVIEN
+            SELECT MADA
+            FROM phancong
+            WHERE nhanvien.MANV = phancong.MA_NVIEN
         )
     );
 
