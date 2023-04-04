@@ -40,13 +40,13 @@ WHERE NOT EXISTS (
                 SELECT MANV
                 FROM nhanvien
                 WHERE CONCAT(HONV, ' ', TENLOT, ' ', TENNV) = "Đinh Bá Tiến"
+            )
         )
         AND MADA NOT IN (
             SELECT MADA
             FROM phancong
             WHERE nhanvien.MANV = phancong.MA_NVIEN
         )
-    )
 );
 
 -- 04. Cho biết những nhân được phân công cho tất cả các công việc trong đề án ‘Sản phẩm X’
