@@ -56,7 +56,7 @@ WHERE NOT EXISTS (
     SELECT MADA, STT
     FROM congviec
     WHERE
-        MADA = (
+        MADA IN (
             SELECT MADA
             FROM dean
             WHERE TENDA = 'San pham X'
