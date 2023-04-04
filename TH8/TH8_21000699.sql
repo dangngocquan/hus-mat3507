@@ -31,23 +31,19 @@ SELECT HONV, TENLOT, TENNV
 FROM nhanvien
 WHERE NOT EXISTS (
     SELECT MADA
-    FROM dean
+    FROM phancong
     WHERE 
-        MADA IN (
-            SELECT MADA
-            FROM phancong
-            WHERE phancong.MA_NVIEN = (
-                SELECT MANV
-                FROM nhanvien
-                WHERE CONCAT(HONV, ' ', TENLOT, ' ', TENNV) = "Đinh Bá Tiến"
-            )
+        phancong.MA_NVIEN = (
+            SELECT MANV
+            FROM nhanvien
+            WHERE CONCAT(HONV, ' ', TENLOT, ' ', TENNV) = "Đinh Bá Tiến"
         )
         AND MADA NOT IN (
-            SELECT MADA
-            FROM phancong
-            WHERE nhanvien.MANV = phancong.MA_NVIEN
+                SELECT MADA
+                FROM phancong
+                WHERE nhanvien.MANV = phancong.MA_NVIEN
         )
-);
+    );
 
 -- 04. Cho biết những nhân được phân công cho tất cả các công việc trong đề án ‘Sản phẩm X’
 SELECT *
