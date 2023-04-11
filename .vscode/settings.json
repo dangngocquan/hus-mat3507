@@ -12,6 +12,18 @@
       "database": "quan_ly_de_an_4",
       "username": "root",
       "password": "1234"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MariaDB",
+      "name": "demo01",
+      "database": "demo01",
+      "username": "root"
     }
   ]
 }
